@@ -1,0 +1,38 @@
+<div>
+  <h3>home component</h3>
+
+  <div>Count: {{ count }}</div>
+  <div>Count binh phuong: {{ counterBinhPhuong }}</div>
+
+  <h2>em chao anh {{ name }}</h2>
+  <input type="text" [(ngModel)]="age" />
+  <!-- <div *ngIf="age < 18">chưa đủ tuổi đi tù</div>
+  <div *ngIf="age >= 18">Đã đủ tuổi đi tù</div> -->
+  <button (click)="resetName()">Reset</button>
+  <div *ngIf="age < 18; then tre; else gia"></div>
+  <ng-template #tre><h2>ban chua du tuoi cuoi</h2></ng-template>
+  <ng-template #gia><h2>ban da du tuoi cuoi</h2></ng-template>
+
+  <br />
+  <div>List fruits</div>
+  <ul>
+    <li *ngFor="let fruit of fruits; let i = index">{{ i + 1 }}. {{ fruit }}</li>
+  </ul>
+
+  <table class="table" style="width: 100%">
+    <tr>
+      <th>ID</th>
+      <th>Name</th>
+      <th>Price</th>
+      <th>test custom pipe</th>
+    </tr>
+    <tr *ngFor="let fruit of listFruits; let i = index">
+      <td>{{ fruit.id }}</td>
+      <td>{{ fruit.name | uppercase }}</td>
+      <td [ngClass]="{ 'so-am': fruit.price < 100 }" class="price">
+        {{ fruit.price | currency : 'VND' }}
+      </td>
+      <td>{{ fruit.price | onSale | uppercase }}</td>
+    </tr>
+  </table>
+</div>

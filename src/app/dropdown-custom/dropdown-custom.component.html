@@ -1,0 +1,15 @@
+<label for="tinh">Tỉnh</label>
+
+<select name="tinh" id="tinh" (change)="onChangeCities($event)">
+  <option *ngFor="let city of cities; let i = index" value="{{ city.city }}">
+    {{ city.city }}
+  </option>
+</select>
+
+<hr />
+
+<label for="thanh pho">Thành phố</label>
+
+<select name="cars" id="cars">
+  <option *ngFor="let item of districtsSelected" value="">{{ item }}</option>
+</select>

@@ -1,0 +1,14 @@
+<div [ngSwitch]="isLogin">
+  About Page!
+
+  <div>Count: {{ count }}</div>
+  <div>Count binh phuong: {{ counterBinhPhuong }}</div>
+
+  <div *ngSwitchCase="true">
+    <app-home></app-home>
+  </div>
+
+  <div *ngSwitchDefault appHighLight>User don't login</div>
+
+  <!-- <div appHighLight [appHighLight]="'purple'">test</div> -->
+</div>
