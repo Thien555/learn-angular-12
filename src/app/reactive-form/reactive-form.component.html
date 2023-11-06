@@ -1,0 +1,13 @@
+<p>reactive-form works!</p>
+
+<form [formGroup]="profileForm" (ngSubmit)="onSubmit()">
+  <label for="first-name">First Name: </label>
+  <input id="first-name" type="text" formControlName="firstName" />
+  <div *ngIf="!profileForm.controls.firstName.valid" style="color: red">Filed is required</div>
+
+  <br />
+
+  <label for="last-name">Last Name: </label>
+  <input id="last-name" type="text" formControlName="lastName" />
+  <button type="submit" [disabled]="!profileForm.valid">Submit</button>
+</form>
